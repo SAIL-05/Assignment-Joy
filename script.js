@@ -15,6 +15,15 @@ if (Age <= 12) {
 
 // Write a program that determines if a year is a leap year.
 
+const year = parseInt(prompt("Enter the year"));
+if (year % 4 ==0 || year % 100 !==0 && year % 400 ==0){
+    alert("It is a leap year")
+}else if(year % 100 ==0 || year % 400 !==0  && year % 4 !==0){
+  alert("It is not a leap year")
+}else{
+  alert("you were born in another multiverse")
+}
+
 // Write a program that calculates a discount based on the purchase amount.Prices equal or over 100 discount have a discount of 20. Prices equal or over 50 have a discount of 10. Otherwise discount is 0
 
 const originalPrice = parseInt(prompt("Enter the price")); 
@@ -30,7 +39,8 @@ if(originalPrice >= 100){
     alert("discount is equal to zero")
 }
 
-// Write a program that greets the user based on the time of day. Display good morning, good afternnon or good evening based on the time of day when you run the code.
+// // Write a program that greets the user based on the time of day. Display good morning, good afternnon or good evening based on the time of day when you run the code.
+
 const now = new Date()
 const hour = now.getHours();
 if(hour <=12 && hour >=0){
@@ -43,4 +53,18 @@ else if(hour >16 && hour <= 23){
     alert("Good evening");
 }else{
     alert("You are from another multiverse");
+}
+
+// Write a simple number guessing game. Provide a secret number and a guess. Based on those numbers give players clues if their guess is higher, lower or correct.
+
+const secretNumber = 10;
+const guess = parseInt(prompt("guess the secret number"));
+if(guess === secretNumber){
+  alert(" correct! wow you are really good at guess game")
+}else if(guess<secretNumber){
+  alert("wrong! your guess is lower than the secret number, try again");
+}else if(guess>secretNumber){
+  alert("wrong! your guess is higher than the secret number");
+}else{
+  alert("Invalid")
 }
